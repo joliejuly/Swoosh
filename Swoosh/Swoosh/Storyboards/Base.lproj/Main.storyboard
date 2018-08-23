@@ -114,6 +114,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZBl-EG-wmu"/>
+                    <connections>
+                        <outlet property="getStartedBtn" destination="WbO-pb-tAE" id="cdX-vZ-pma"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -249,6 +252,7 @@
                         <viewLayoutGuide key="safeArea" id="h2N-OG-H3J"/>
                     </view>
                     <connections>
+                        <outlet property="nextBtn" destination="O4f-vY-5n2" id="FvA-19-4df"/>
                         <outletCollection property="leagueButtons" destination="YAn-30-QTg" collectionClass="NSMutableArray" id="VbI-8E-ueV"/>
                         <outletCollection property="leagueButtons" destination="en0-nG-tpi" collectionClass="NSMutableArray" id="4Nx-bQ-Zvl"/>
                         <outletCollection property="leagueButtons" destination="wAN-xw-CmO" collectionClass="NSMutableArray" id="FHJ-R1-Bru"/>
@@ -258,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="1577.34375" y="133.52855051244509"/>
         </scene>
-        <!--View Controller-->
+        <!--Beginner View Controller-->
         <scene sceneID="MPy-A3-OZQ">
             <objects>
-                <viewController id="PoJ-Hf-LbQ" sceneMemberID="viewController">
+                <viewController id="PoJ-Hf-LbQ" customClass="BeginnerViewController" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X8p-WO-5ld">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,6 +286,9 @@
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                 </variation>
+                                <connections>
+                                    <action selector="finishBtnTapped:" destination="PoJ-Hf-LbQ" eventType="touchUpInside" id="iGQ-Vp-ilh"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="hjb-Ey-I8n">
                                 <rect key="frame" x="128" y="89" width="119" height="84"/>
@@ -306,7 +313,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YK-4E-uGn" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="161.5" height="50"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.8123929794520548" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.39027718321917809" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                         <state key="normal" title="Beginner">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -314,10 +321,13 @@
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="levelBtnTapped:" destination="PoJ-Hf-LbQ" eventType="touchUpInside" id="17V-Yb-U5M"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Na9-Jb-zRJ" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Na9-Jb-zRJ" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="173.5" y="0.0" width="161.5" height="50"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.8123929795" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.39027718321917809" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="p4U-iN-iBe"/>
                                         </constraints>
@@ -328,6 +338,9 @@
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="levelBtnTapped:" destination="PoJ-Hf-LbQ" eventType="touchUpInside" id="DxJ-QF-6xX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -349,6 +362,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hU9-mL-DBr"/>
                     </view>
+                    <connections>
+                        <outlet property="finishBtn" destination="Ydf-wr-nKO" id="kXS-uC-hX1"/>
+                        <outletCollection property="levelButtons" destination="2YK-4E-uGn" collectionClass="NSMutableArray" id="HVV-2F-UZ1"/>
+                        <outletCollection property="levelButtons" destination="Na9-Jb-zRJ" collectionClass="NSMutableArray" id="vMo-nX-mOE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZA-Jg-uqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

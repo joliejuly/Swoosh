@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
+    @IBOutlet weak var getStartedBtn: BorderButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        setUpViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,6 +24,14 @@ class ViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    private func setUpViews() {
+        getStartedBtn.alpha = 0
+        
+        UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseInOut, animations: {
+            self.getStartedBtn.alpha = 1
+        }, completion: nil)
     }
 
 }

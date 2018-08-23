@@ -13,6 +13,7 @@
 		0F0871FA212DCCF500752810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0871F9212DCCF500752810 /* Assets.xcassets */; };
 		0F0871FD212DCCF500752810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0871FB212DCCF500752810 /* LaunchScreen.storyboard */; };
 		0F087205212DEC5500752810 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F087204212DEC5500752810 /* BorderButton.swift */; };
+		0F087228212EFD3A00752810 /* DesiredLeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F087227212EFD3A00752810 /* DesiredLeagueViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0F0871FC212DCCF500752810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F0871FE212DCCF500752810 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F087204212DEC5500752810 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
+		0F087227212EFD3A00752810 /* DesiredLeagueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredLeagueViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				0F0871F2212DCCF500752810 /* AppDelegate.swift */,
 				0F0871F4212DCCF500752810 /* ViewController.swift */,
+				0F087227212EFD3A00752810 /* DesiredLeagueViewController.swift */,
 				0F0871F6212DCCF500752810 /* Main.storyboard */,
 				0F0871F9212DCCF500752810 /* Assets.xcassets */,
 				0F0871FB212DCCF500752810 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				0F0871F5212DCCF500752810 /* ViewController.swift in Sources */,
 				0F0871F3212DCCF500752810 /* AppDelegate.swift in Sources */,
+				0F087228212EFD3A00752810 /* DesiredLeagueViewController.swift in Sources */,
 				0F087205212DEC5500752810 /* BorderButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +221,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -271,7 +275,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

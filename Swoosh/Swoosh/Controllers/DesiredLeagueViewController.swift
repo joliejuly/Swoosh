@@ -10,12 +10,15 @@ import UIKit
 
 final class DesiredLeagueViewController: UIViewController {
     
+    var player: Player!
+    
     @IBOutlet var leagueButtons: [UIButton]!
     @IBOutlet weak var nextBtn: BorderButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
+        player = Player()
     }
 
     override var prefersStatusBarHidden: Bool {

@@ -9,6 +9,17 @@
 import Foundation
 
 struct Player {
-    var desiredLeague: String?
-    var selectedSkillLevel: String? 
+    var desiredLeague: League?
+    var selectedSkillLevel: SkillLevel?
+}
+
+enum League: Int {
+    case mens = 0,
+    case womens = 1,
+    case coed = 2
+}
+
+enum SkillLevel: Int {
+    case beginner = 0,
+    case baller = 1
 }

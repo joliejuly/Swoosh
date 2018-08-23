@@ -63,11 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				0F0871F2212DCCF500752810 /* AppDelegate.swift */,
+				0F087232212F4ACD00752810 /* Models */,
 				0F087229212F0A8600752810 /* Controllers */,
 				0F08722C212F0ABF00752810 /* Custom Views */,
 				0F08722D212F0AD900752810 /* Storyboards */,
 				0F08722B212F0AA100752810 /* Support Files */,
-				0F087232212F4ACD00752810 /* Models */,
 			);
 			path = Swoosh;
 			sourceTree = "<group>";

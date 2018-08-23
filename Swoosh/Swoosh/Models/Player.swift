@@ -14,12 +14,12 @@ struct Player {
 }
 
 enum League: Int {
-    case mens = 0,
-    case womens = 1,
+    case mens = 0
+    case womens = 1
     case coed = 2
 }
 
 enum SkillLevel: Int {
-    case beginner = 0,
+    case beginner = 0
     case baller = 1
 }

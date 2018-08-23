@@ -9,16 +9,15 @@
 import UIKit
 
 final class DesiredLeagueViewController: UIViewController {
-    
-    var player: Player!
-    
+
     @IBOutlet var leagueButtons: [UIButton]!
     @IBOutlet weak var nextBtn: BorderButton!
+    
+    var player: Player!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
-        player = Player()
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -26,12 +25,9 @@ final class DesiredLeagueViewController: UIViewController {
     }
     
     @IBAction func leagueIsChosen(_ sender: UIButton) {
-        sender.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
-        for (index, button) in leagueButtons.enumerated() {
-            if sender.tag != index {
-                button.backgroundColor = .clear
-            }
-        }
+        
+        updateLeagueButtons(via: sender)
+        handleChosenLeague(with: sender.tag)
         showNextBtn()
     }
     
@@ -44,6 +40,19 @@ final class DesiredLeagueViewController: UIViewController {
         UIView.animate(withDuration: 0.8) {
              self.nextBtn.alpha = 1
         }
+    }
+    
+    private func updateLeagueButtons(via button: UIButton) {
+        button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
+        for (index, leagueButton) in leagueButtons.enumerated() {
+            if button.tag != index {
+                leagueButton.backgroundColor = .clear
+            }
+        }
+    }
+    
+    private func handleChosenLeague(with tag: Int) {
+        player.desiredLeague = League(rawValue: tag)
     }
     
 }

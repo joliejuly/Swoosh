@@ -1,4 +1,6 @@
 # Swoosh
 A test app to practice autolayout
 
-![](https://preview.ibb.co/eV1wfz/Swoosh.gif)
+![](https://media.giphy.com/media/1n98DCZErd0ss7Odk3/giphy.gif)
+
+

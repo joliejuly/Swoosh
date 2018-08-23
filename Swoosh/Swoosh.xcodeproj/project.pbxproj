@@ -16,6 +16,7 @@
 		0F087228212EFD3A00752810 /* DesiredLeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F087227212EFD3A00752810 /* DesiredLeagueViewController.swift */; };
 		0F08722F212F0AF700752810 /* BeginnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F08722E212F0AF700752810 /* BeginnerViewController.swift */; };
 		0F087231212F4AC700752810 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F087230212F4AC700752810 /* Player.swift */; };
+		0F087235212F511600752810 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F087234212F511600752810 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0F087227212EFD3A00752810 /* DesiredLeagueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredLeagueViewController.swift; sourceTree = "<group>"; };
 		0F08722E212F0AF700752810 /* BeginnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerViewController.swift; sourceTree = "<group>"; };
 		0F087230212F4AC700752810 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		0F087234212F511600752810 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				0F0871F2212DCCF500752810 /* AppDelegate.swift */,
+				0F087233212F50F700752810 /* Flow */,
 				0F087232212F4ACD00752810 /* Models */,
 				0F087229212F0A8600752810 /* Controllers */,
 				0F08722C212F0ABF00752810 /* Custom Views */,
@@ -114,6 +117,14 @@
 				0F087230212F4AC700752810 /* Player.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0F087233212F50F700752810 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				0F087234212F511600752810 /* Coordinator.swift */,
+			);
+			path = Flow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 				0F087205212DEC5500752810 /* BorderButton.swift in Sources */,
 				0F087231212F4AC700752810 /* Player.swift in Sources */,
 				0F08722F212F0AF700752810 /* BeginnerViewController.swift in Sources */,
+				0F087235212F511600752810 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Coordinator {
+final class Coordinator {
     
     var router: UINavigationController
     var player: Player!
@@ -19,14 +19,13 @@ class Coordinator {
     }
     
     func start() {
-        router.pushViewController(makeStartScreenModule(), animated: true)
+        router.setViewControllers([makeStartScreenModule()], animated: false)
     }
     
     private func makeStartScreenModule() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let startScreen = storyboard.instantiateViewController(withIdentifier: "startScreen")
+        guard let startScreen = storyboard.instantiateViewController(withIdentifier: "startScreen") as? ViewController else { return UIViewController() }
         startScreen.player = self.player
-        router.setViewControllers([startScreen], animated: false)
         return startScreen
     }
 }

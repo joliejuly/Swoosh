@@ -10,6 +10,8 @@ import UIKit
 
 final class ViewController: UIViewController {
 
+    var player: Player!
+    
     @IBOutlet weak var getStartedBtn: BorderButton!
     
     override func viewDidLoad() {

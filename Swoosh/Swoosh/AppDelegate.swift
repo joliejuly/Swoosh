@@ -13,14 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var coordinator: Coordinator?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if let nav = window?.rootViewController as? UINavigationController {
-            coordinator = Coordinator(router: nav)
-        } else {
-            coordinator = Coordinator(router: UINavigationController())
-        }
+        let nav = UINavigationController()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = nav
+        window?.makeKeyAndVisible()
+        coordinator = Coordinator(router: nav)
         coordinator?.start()
         
         return true

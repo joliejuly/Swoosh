@@ -12,20 +12,52 @@ final class Coordinator {
     
     var router: UINavigationController
     var player: Player!
+    var finishFlow: ((Player?) -> Void )?
     
     init(router: UINavigationController) {
         self.router = router
         self.player = Player()
+        
+        self.router.navigationBar.barStyle = .black
     }
     
     func start() {
         router.setViewControllers([makeStartScreenModule()], animated: false)
     }
     
-    private func makeStartScreenModule() -> UIViewController {
+    func presentLeagueModule() {
+        let leagueVC = makeLeagueModule()
+        router.pushViewController(leagueVC, animated: true)
+    }
+    
+    func presentBeginnerModule() {
+        let beginnerVC = makeBeginnerModule()
+        router.pushViewController(beginnerVC, animated: true)
+    }
+    
+    private func makeModule(with id: String) -> UIViewController? {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let startScreen = storyboard.instantiateViewController(withIdentifier: "startScreen") as? ViewController else { return UIViewController() }
+        return storyboard.instantiateViewController(withIdentifier: id)
+    }
+    
+    private func makeStartScreenModule() -> UIViewController {
+        guard let startScreen = makeModule(with: "startScreen") as? ViewController else { fatalError("No ViewController screen in Main storyboard") }
         startScreen.player = self.player
+        startScreen.coordinator = self
         return startScreen
+    }
+    
+    private func makeLeagueModule() -> DesiredLeagueViewController {
+        guard let leagueScreen = makeModule(with: "leagueScreen") as? DesiredLeagueViewController else { fatalError("No DesiredLeagueViewController screen in Main storyboard") }
+        leagueScreen.player = self.player
+        leagueScreen.coordinator = self
+        return leagueScreen
+    }
+    
+    private func makeBeginnerModule() -> BeginnerViewController {
+        guard let beginnerScreen = makeModule(with: "beginnerScreen") as? BeginnerViewController else { fatalError("No BeginnerViewController screen in Main storyboard") }
+        beginnerScreen.player = self.player
+        beginnerScreen.coordinator = self
+        return beginnerScreen
     }
 }

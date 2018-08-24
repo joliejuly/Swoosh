@@ -10,10 +10,11 @@ import UIKit
 
 final class DesiredLeagueViewController: UIViewController {
 
+    var player: Player?
+    var coordinator: Coordinator?
+    
     @IBOutlet var leagueButtons: [UIButton]!
     @IBOutlet weak var nextBtn: BorderButton!
-    
-    var player: Player!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,12 @@ final class DesiredLeagueViewController: UIViewController {
         handleChosenLeague(with: sender.tag)
         showNextBtn()
     }
+    
+    
+    @IBAction func nextButtonTapped(_ sender: BorderButton) {
+        coordinator?.presentBeginnerModule()
+    }
+    
     
     private func setUpViews() {
         navigationController?.navigationBar.isHidden = false
@@ -52,7 +59,8 @@ final class DesiredLeagueViewController: UIViewController {
     }
     
     private func handleChosenLeague(with tag: Int) {
-        player.desiredLeague = League(rawValue: tag)
+        player?.desiredLeague = League(rawValue: tag)
+        coordinator?.player = player
     }
     
 }

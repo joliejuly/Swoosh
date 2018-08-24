@@ -78,7 +78,7 @@
                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="mL6-zm-UUK" kind="show" id="M54-h9-2VD"/>
+                                    <action selector="getStartedBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MM2-KS-AsU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,6 +116,7 @@
                     <navigationItem key="navigationItem" id="ZBl-EG-wmu"/>
                     <connections>
                         <outlet property="getStartedBtn" destination="WbO-pb-tAE" id="cdX-vZ-pma"/>
+                        <outlet property="leagueLabel" destination="UcX-5J-2Si" id="gWK-vX-6us"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -125,7 +126,7 @@
         <!--Desired League View Controller-->
         <scene sceneID="R94-gA-CaF">
             <objects>
-                <viewController id="mL6-zm-UUK" customClass="DesiredLeagueViewController" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="leagueScreen" id="mL6-zm-UUK" customClass="DesiredLeagueViewController" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eth-dm-mlO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +220,7 @@
                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="PoJ-Hf-LbQ" kind="show" id="bp6-Sq-55w"/>
+                                    <action selector="nextButtonTapped:" destination="mL6-zm-UUK" eventType="touchUpInside" id="tnp-VP-hcg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -265,7 +266,7 @@
         <!--Beginner View Controller-->
         <scene sceneID="MPy-A3-OZQ">
             <objects>
-                <viewController id="PoJ-Hf-LbQ" customClass="BeginnerViewController" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="beginnerScreen" id="PoJ-Hf-LbQ" customClass="BeginnerViewController" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X8p-WO-5ld">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

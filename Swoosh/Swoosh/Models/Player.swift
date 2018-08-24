@@ -11,6 +11,23 @@ import Foundation
 struct Player {
     var desiredLeague: League?
     var selectedSkillLevel: SkillLevel?
+    
+    var leagueDescription: String {
+        guard let league = desiredLeague else { return "" }
+        switch league {
+        case .mens: return "Mens"
+        case .womens: return "Womens"
+        case .coed: return "Co-ed"
+        }
+    }
+    
+    var skillDescription: String {
+        guard let skill = selectedSkillLevel else { return "" }
+        switch skill {
+        case .beginner: return "beginner's"
+        case .baller: return "baller's"
+        }
+    }
 }
 
 enum League: Int {
@@ -23,3 +40,5 @@ enum SkillLevel: Int {
     case beginner = 0
     case baller = 1
 }
+
+

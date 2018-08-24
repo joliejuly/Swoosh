@@ -10,6 +10,9 @@ import UIKit
 
 final class BeginnerViewController: UIViewController {
 
+    var player: Player?
+    var coordinator: Coordinator?
+    
     @IBOutlet var levelButtons: [UIButton]!
     @IBOutlet weak var finishBtn: BorderButton!
     
@@ -31,11 +34,12 @@ final class BeginnerViewController: UIViewController {
         UIView.animate(withDuration: 0.4) {
             self.finishBtn.alpha = 1
         }
+        
+        player?.selectedSkillLevel = SkillLevel(rawValue: sender.tag)
     }
     
     @IBAction func finishBtnTapped(_ sender: UIButton) {
-        navigationController?.popToRootViewController(animated: true)
-        
+        coordinator?.finishFlow?(player)
     }
     
 }

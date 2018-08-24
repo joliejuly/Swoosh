@@ -1,5 +1,5 @@
 # Swoosh
-A test app to practice autolayout
+Very simple app I made to practice making custom constraints for iPad and iPhone, as well as implementation of Coordinator design pattern. 
 
 # iPhone 5.5
 

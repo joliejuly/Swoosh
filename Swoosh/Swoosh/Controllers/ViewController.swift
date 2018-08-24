@@ -11,7 +11,7 @@ import UIKit
 final class ViewController: UIViewController {
 
     var player: Player?
-    var coordinator: Coordinator?
+    weak var coordinator: Coordinator?
     
     @IBOutlet weak var getStartedBtn: BorderButton!
     @IBOutlet weak var leagueLabel: UILabel!
@@ -30,7 +30,6 @@ final class ViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
     
     @IBAction func getStartedBtnTapped(_ sender: BorderButton) {
         coordinator?.presentLeagueModule()

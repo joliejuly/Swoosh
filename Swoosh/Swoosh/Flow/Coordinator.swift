@@ -17,11 +17,10 @@ final class Coordinator {
     init(router: UINavigationController) {
         self.router = router
         self.player = Player()
-        
-        self.router.navigationBar.barStyle = .black
     }
     
     func start() {
+       
         router.setViewControllers([makeStartScreenModule()], animated: false)
     }
     

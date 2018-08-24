@@ -11,14 +11,14 @@ import UIKit
 final class BeginnerViewController: UIViewController {
 
     var player: Player?
-    var coordinator: Coordinator?
+    weak var coordinator: Coordinator?
     
     @IBOutlet var levelButtons: [UIButton]!
     @IBOutlet weak var finishBtn: BorderButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        finishBtn.alpha = 0
+        setUpViews()
     }
 
     @IBAction func levelBtnTapped(_ sender: UIButton) {
@@ -40,6 +40,11 @@ final class BeginnerViewController: UIViewController {
     
     @IBAction func finishBtnTapped(_ sender: UIButton) {
         coordinator?.finishFlow?(player)
+    }
+    
+    private func setUpViews() {
+        
+        finishBtn.alpha = 0
     }
     
 }

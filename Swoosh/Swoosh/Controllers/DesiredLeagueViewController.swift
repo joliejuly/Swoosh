@@ -11,7 +11,7 @@ import UIKit
 final class DesiredLeagueViewController: UIViewController {
 
     var player: Player?
-    var coordinator: Coordinator?
+    weak var coordinator: Coordinator?
     
     @IBOutlet var leagueButtons: [UIButton]!
     @IBOutlet weak var nextBtn: BorderButton!
@@ -37,9 +37,9 @@ final class DesiredLeagueViewController: UIViewController {
         coordinator?.presentBeginnerModule()
     }
     
-    
     private func setUpViews() {
-        navigationController?.navigationBar.isHidden = false
+        let navBar = navigationController?.navigationBar
+        navBar?.isHidden = false
         nextBtn.alpha = 0
     }
     

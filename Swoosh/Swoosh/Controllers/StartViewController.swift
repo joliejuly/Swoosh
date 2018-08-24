@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class StartViewController: UIViewController {
 
     var player: Player?
     weak var coordinator: Coordinator?
@@ -16,6 +16,7 @@ final class ViewController: UIViewController {
     @IBOutlet weak var getStartedBtn: BorderButton!
     @IBOutlet weak var leagueLabel: UILabel!
     
+    //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
@@ -27,15 +28,18 @@ final class ViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
 
+    //MARK: Overriden properties
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
+    //MARK: Actions
     @IBAction func getStartedBtnTapped(_ sender: BorderButton) {
         coordinator?.presentLeagueModule()
     }
     
     
+    //MARK: Helpers
     private func setUpViews() {
         getStartedBtn.alpha = 0
         
@@ -45,8 +49,11 @@ final class ViewController: UIViewController {
     }
     
     private func setUpBindings() {
+        
         coordinator?.finishFlow = { [weak self] player in
+            
             guard let player = player else { return }
+            
             self?.leagueLabel.text = "You've chosen \(player.leagueDescription) league and \(player.skillDescription) level of players"
             self?.leagueLabel.adjustsFontSizeToFitWidth = true
             self?.getStartedBtn.setTitle("START OVER AGAIN", for: .normal)

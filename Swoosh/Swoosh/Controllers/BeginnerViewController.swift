@@ -10,41 +10,47 @@ import UIKit
 
 final class BeginnerViewController: UIViewController {
 
-    var player: Player?
-    weak var coordinator: Coordinator?
-    
     @IBOutlet var levelButtons: [UIButton]!
     @IBOutlet weak var finishBtn: BorderButton!
     
+    var player: Player?
+    weak var coordinator: Coordinator?
+
+    //MARK: Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpViews()
+        finishBtn.alpha = 0
     }
 
+    //MARK: Actions
+    
     @IBAction func levelBtnTapped(_ sender: UIButton) {
-        
-        sender.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.8123929795)
-        
-        for (index, button) in levelButtons.enumerated() {
-            if sender.tag != index {
-                button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.39)
-            }
-        }
-        
-        UIView.animate(withDuration: 0.4) {
-            self.finishBtn.alpha = 1
-        }
-        
-        player?.selectedSkillLevel = SkillLevel(rawValue: sender.tag)
+        updateViewsAfterSelection(button: sender)
+        handleSelection(with: sender.tag)
     }
     
     @IBAction func finishBtnTapped(_ sender: UIButton) {
         coordinator?.finishFlow?(player)
     }
     
-    private func setUpViews() {
-        
-        finishBtn.alpha = 0
+    //MARK: Helpers
+    
+    private func updateViewsAfterSelection(button: UIButton) {
+        button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.8123929795)
+
+        UIView.animate(withDuration: 0.4) {
+            self.finishBtn.alpha = 1
+        }
+    }
+    
+    private func handleSelection(with tag: Int) {
+        for (index, button) in levelButtons.enumerated() {
+            if tag != index {
+                button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.39)
+            }
+        }
+        player?.selectedSkillLevel = SkillLevel(rawValue: tag)
     }
     
 }

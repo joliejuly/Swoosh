@@ -10,11 +10,14 @@ import UIKit
 
 final class DesiredLeagueViewController: UIViewController {
 
+    @IBOutlet var leagueButtons: [UIButton]!
+    @IBOutlet weak var nextBtn: BorderButton!
+    
     var player: Player?
     weak var coordinator: Coordinator?
     
-    @IBOutlet var leagueButtons: [UIButton]!
-    @IBOutlet weak var nextBtn: BorderButton!
+    
+    //MARK: Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,8 @@ final class DesiredLeagueViewController: UIViewController {
         return false
     }
     
+    //MARK: Actions
+    
     @IBAction func leagueIsChosen(_ sender: UIButton) {
         
         updateLeagueButtons(via: sender)
@@ -32,10 +37,13 @@ final class DesiredLeagueViewController: UIViewController {
         showNextBtn()
     }
     
-    
     @IBAction func nextButtonTapped(_ sender: BorderButton) {
         coordinator?.presentBeginnerModule()
     }
+}
+
+//MARK: Helpers
+extension DesiredLeagueViewController {
     
     private func setUpViews() {
         let navBar = navigationController?.navigationBar
@@ -45,7 +53,7 @@ final class DesiredLeagueViewController: UIViewController {
     
     private func showNextBtn() {
         UIView.animate(withDuration: 0.8) {
-             self.nextBtn.alpha = 1
+            self.nextBtn.alpha = 1
         }
     }
     
@@ -62,5 +70,4 @@ final class DesiredLeagueViewController: UIViewController {
         player?.desiredLeague = League(rawValue: tag)
         coordinator?.player = player
     }
-    
 }

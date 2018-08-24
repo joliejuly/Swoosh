@@ -12,7 +12,7 @@ final class Coordinator {
     
     var router: UINavigationController
     var player: Player!
-    var finishFlow: ((Player?) -> Void )?
+    var finishFlow: ((Player?) -> Void)? //instantiated in startVC
     
     init(router: UINavigationController) {
         self.router = router
@@ -20,7 +20,6 @@ final class Coordinator {
     }
     
     func start() {
-       
         router.setViewControllers([makeStartScreenModule()], animated: false)
     }
     
@@ -33,14 +32,18 @@ final class Coordinator {
         let beginnerVC = makeBeginnerModule()
         router.pushViewController(beginnerVC, animated: true)
     }
-    
+}
+
+//MARK: - Factory methods
+
+extension Coordinator {
     private func makeModule(with id: String) -> UIViewController? {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: id)
     }
     
     private func makeStartScreenModule() -> UIViewController {
-        guard let startScreen = makeModule(with: "startScreen") as? ViewController else { fatalError("No ViewController screen in Main storyboard") }
+        guard let startScreen = makeModule(with: "startScreen") as? StartViewController else { fatalError("No ViewController screen in Main storyboard") }
         startScreen.player = self.player
         startScreen.coordinator = self
         return startScreen
